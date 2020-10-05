@@ -22,11 +22,11 @@ Pod::Spec.new do |s|
 Project created with the objective use components created by OceanTokens.
                        DESC
 
-  s.homepage         = 'https://github.com/Pagnet/ocean-ds-ios'
+  s.homepage         = 'https://github.com/Pagnet/lytics-mobile-ios'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'alex gomes' => 'alexandro.gomes@useblu.com.br' }
-  s.source           = { :git => 'https://github.com/Pagnet/ocean-ds-ios.git',
+  s.source           = { :git => 'https://github.com/Pagnet/lytics-mobile-ios.git',
                         :tag => 'Lytics-' + s.version.to_s }
 
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
@@ -37,7 +37,7 @@ Project created with the objective use components created by OceanTokens.
   s.dependency 'SwiftLint'
   s.dependency 'SwiftFormat/CLI'
   
-  s.source_files = 'OceanComponents/Classes/**/*'
+  s.source_files = '**/*'
   s.info_plist = { 'CFBundleIdentifier' => 'com.br.useblu.lytics' }
   s.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.br.useblu.lytics' }
   
