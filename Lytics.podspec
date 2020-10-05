@@ -95,7 +95,7 @@ Project created with the objective use components created by OceanTokens.
   #
 
   #spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  spec.source_files = 'Lytics/**/**/*'
+  spec.source_files = "Lytics/Classes/**/*"
   spec.exclude_files = "Lytics/Classes/Info.plist"
 
   # spec.public_header_files = "Classes/**/*.h"
