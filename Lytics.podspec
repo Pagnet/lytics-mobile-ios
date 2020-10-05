@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "Lytics"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "broker for analytics tools in mobile"
 
   # This description is used to generate tags and improve search results.
