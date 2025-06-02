@@ -1,6 +1,0 @@
-framework module Pods_SampleLytics {
-  umbrella header "Pods-SampleLytics-umbrella.h"
-
-  export *
-  module * { export * }
-}

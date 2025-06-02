@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "6DA5D7C2-E722-4E62-97FE-46B8636B7A6F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SampleLytics.xcodeproj",
+        "identifier" : "B71F9C97252BCDB3003E6D8F",
+        "name" : "SampleLyticsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,6 +1,0 @@
-framework module Lytics {
-  umbrella header "Lytics-umbrella.h"
-
-  export *
-  module * { export * }
-}
