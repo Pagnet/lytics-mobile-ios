@@ -8,4 +8,4 @@
 
 import Foundation
 
-public typealias ScreenType = LyticsBase & Identifiable & ClassContainer
+public protocol ScreenType: LyticsBase, Identifiable, DataContainer {}

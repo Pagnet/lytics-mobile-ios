@@ -12,20 +12,20 @@ import Lytics
 
 enum TestScreenEvent: ScreenType {
 
-    case screenWithClass(class: AnyClass?)
-    case screenWithoutClass
+    case screenWithData(data: [String: Any]?)
+    case screenWithoutData
 
-    var classValue: AnyClass? {
+    var data: [String: Any]? {
         switch self {
-        case let .screenWithClass(anyClass): return anyClass
-        case .screenWithoutClass: return nil
+        case let .screenWithData(data): return data
+        case .screenWithoutData: return nil
         }
     }
 
     var name: String {
         switch self {
-        case .screenWithClass: return "screenWithClass"
-        case .screenWithoutClass: return "screenWithoutClass"
+        case .screenWithData: return "screenWithData"
+        case .screenWithoutData: return "screenWithoutData"
         }
     }
 }

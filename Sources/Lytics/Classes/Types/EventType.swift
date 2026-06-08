@@ -8,4 +8,4 @@
 
 import Foundation
 
-public typealias EventType = LyticsBase & Identifiable & DataContainer
+public protocol EventType: LyticsBase, Identifiable, DataContainer {}

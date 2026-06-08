@@ -28,30 +28,30 @@ class ScreenEventsTests: XCTestCase {
         }
 
         try? Lytics.register(provider: mock)
-        TestScreenEvent.screenWithoutClass.dispatch()
+        TestScreenEvent.screenWithoutData.dispatch()
     }
 
     func testSendScreenEventWithoutData() throws {
         let mock = ProviderMock(enable: true)
         mock.screenEventValidation = {
-            XCTAssertNil($0.classValue)
-            XCTAssertEqual($0.name, "screenWithoutClass")
+            XCTAssertNil($0.data)
+            XCTAssertEqual($0.name, "screenWithoutData")
         }
 
         try? Lytics.register(provider: mock)
 
-        TestScreenEvent.screenWithoutClass.dispatch()
+        TestScreenEvent.screenWithoutData.dispatch()
     }
 
     func testSendScreenEventWithData() throws {
         let mock = ProviderMock(enable: true)
         mock.screenEventValidation = {
-            XCTAssertNotNil($0.classValue)
-            XCTAssertEqual($0.name, "screenWithClass")
+            XCTAssertEqual($0.data?["key"] as? String, "value")
+            XCTAssertEqual($0.name, "screenWithData")
         }
 
         try? Lytics.register(provider: mock)
 
-        TestScreenEvent.screenWithClass(class: UIViewController.self).dispatch()
+        TestScreenEvent.screenWithData(data: ["key": "value"]).dispatch()
     }
 }
