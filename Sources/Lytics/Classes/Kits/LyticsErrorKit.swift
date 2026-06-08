@@ -18,7 +18,7 @@ public class LyticsErrorKit {
         Lytics.error(error, addtionalUserInfo: nil)
     }
 
-    public func dispatch(addtionalUserInfo userInfo:[String: Any]) {
+    public func dispatch(addtionalUserInfo userInfo:[String: Any?]) {
         Lytics.error(error, addtionalUserInfo: userInfo)
     }
 }

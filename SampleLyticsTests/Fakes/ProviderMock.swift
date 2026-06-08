@@ -16,9 +16,9 @@ class ProviderMock: ProviderType {
 
     var eventValidation: ((EventType) -> Void)?
     var screenEventValidation: ((ScreenType) -> Void)?
-    var userPropertiesValidation: (([String: Any]?) -> Void)?
+    var userPropertiesValidation: (([String: Any?]?) -> Void)?
     var userIdentificationValidation: ((_ id: String?, _ name: String?, _ email: String?) -> Void)?
-    var errorValidation: ((_ error: Error, _ userInfo: [String : Any]?) -> Void )?
+    var errorValidation: ((_ error: Error, _ userInfo: [String : Any?]?) -> Void )?
 
     init(enable: Bool = true, name: String = "ProviderMock") {
         self.enable = enable
@@ -39,7 +39,7 @@ extension ProviderMock: ScreenDispatcher {
 }
 
 extension ProviderMock: UserPropertiesDispatcher {
-    func user(properties: [String : Any]?) {
+    func user(properties: [String : Any?]?) {
         self.userPropertiesValidation?(properties)
     }
 }
@@ -51,7 +51,7 @@ extension ProviderMock: UserIdentificationDispatcher {
 }
 
 extension ProviderMock: ErrorDispatcher {
-    func error(_ error: Error, addtionalUserInfo userInfo: [String : Any]?) {
+    func error(_ error: Error, addtionalUserInfo userInfo: [String : Any?]?) {
         self.errorValidation?(error, userInfo)
     }
 }

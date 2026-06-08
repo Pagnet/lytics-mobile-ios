@@ -14,7 +14,7 @@ public extension LyticsBase where Self: ProvidersContainerType {
         return providers.filterEnabled()
     }
 
-    static func error(_ error: Error, addtionalUserInfo userInfo:[String: Any]?) {
+    static func error(_ error: Error, addtionalUserInfo userInfo:[String: Any?]?) {
         errorDispatcherProviders.forEach { $0.error(error, addtionalUserInfo: userInfo) }
     }
 }

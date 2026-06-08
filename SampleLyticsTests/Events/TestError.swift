@@ -11,7 +11,7 @@ import Lytics
 @testable import SampleLytics
 
 enum TestError: LyticsErrorType {
-    var data: [String : Any]? {
+    var data: [String : Any?]? {
         switch self {
         case let .withUserInfo(data): return data
         default: return nil
@@ -19,5 +19,5 @@ enum TestError: LyticsErrorType {
     }
 
     case withoutUserInfo
-    case withUserInfo(data: [String: Any])
+    case withUserInfo(data: [String: Any?])
 }

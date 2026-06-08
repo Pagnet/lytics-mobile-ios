@@ -23,7 +23,7 @@ class NonFatalErrorTests: XCTestCase {
 
     func testSendCustomNonError(){
         let mock = ProviderMock()
-        mock.errorValidation = { (error: Error, userInfo: [String: Any]?) in
+        mock.errorValidation = { (error: Error, userInfo: [String: Any?]?) in
             XCTAssertEqual(TestError.withoutUserInfo.localizedDescription, (error as! TestError).localizedDescription)
             XCTAssertNil(userInfo)
 
@@ -34,8 +34,8 @@ class NonFatalErrorTests: XCTestCase {
 
     func testSendCustomNonErrorWithUserInfo(){
         let mock = ProviderMock()
-        let userInfoValue: [String: Any] = ["test":"value"]
-        mock.errorValidation = { (error: Error, userInfo: [String: Any]?) in
+        let userInfoValue: [String: Any?] = ["test":"value"]
+        mock.errorValidation = { (error: Error, userInfo: [String: Any?]?) in
             XCTAssertEqual(TestError.withUserInfo(data: userInfo!).localizedDescription, (error as! TestError).localizedDescription)
             XCTAssertNotNil(userInfo)
             XCTAssertEqual(userInfo!["test"] as! String, userInfoValue["test"] as! String)
@@ -47,7 +47,7 @@ class NonFatalErrorTests: XCTestCase {
 
     func testSendSystemError() {
         let mock = ProviderMock()
-        mock.errorValidation = { (error: Error, userInfo: [String: Any]?) in
+        mock.errorValidation = { (error: Error, userInfo: [String: Any?]?) in
             XCTAssertEqual(URLError(.dataNotAllowed), (error as! URLError))
             XCTAssertNil(userInfo)
 
@@ -58,10 +58,10 @@ class NonFatalErrorTests: XCTestCase {
 
     func testSendSystemErrorWithAddtionarUserInfo() {
         let mock = ProviderMock()
-        let userInfoValue: [String: Any] = ["test2":"value2"]
-        mock.errorValidation = { (error: Error, userInfo: [String: Any]?) in
+        let userInfoValue: [String: Any?] = ["test2":"value2"]
+        mock.errorValidation = { (error: Error, userInfo: [String: Any?]?) in
             XCTAssertEqual(URLError(.badURL), (error as! URLError))
-            XCTAssertNil(userInfo!["test"])
+            XCTAssertNil(userInfo!["test"] ?? nil)
             XCTAssertEqual(userInfo!["test2"] as! String, userInfoValue["test2"] as! String)
 
         }

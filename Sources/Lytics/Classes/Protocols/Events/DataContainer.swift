@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol DataContainer {
-    var data: [String: Any]? { get }
+    var data: [String: Any?]? { get }
 }

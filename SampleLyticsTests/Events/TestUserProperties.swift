@@ -31,7 +31,7 @@ enum TestUserProperties: UserPropertiesType {
                           email: email)
     }
     
-    var data: [String : Any]? {
+    var data: [String : Any?]? {
         switch self {
         case let .isVip(value): return ["isVip":value]
         case let .totalCoin(value): return ["totalCoin":value]
