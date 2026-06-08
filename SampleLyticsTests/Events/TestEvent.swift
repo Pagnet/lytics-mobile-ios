@@ -22,7 +22,7 @@ enum TestEvent: EventType {
         }
     }
 
-    var data: [String : Any]? {
+    var data: [String : Any?]? {
         switch self {
         case let .withData(data): return ["data": data]
         case .withoutData: return nil

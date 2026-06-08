@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol ErrorDispatcher {
-    func error(_ error: Error, addtionalUserInfo userInfo:[String: Any]?)
+    func error(_ error: Error, addtionalUserInfo userInfo:[String: Any?]?)
 }
